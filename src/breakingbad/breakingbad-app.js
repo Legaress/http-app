@@ -34,4 +34,10 @@ export const BreakingBadApp = async (element) => {
     fetchQuote().
         then(renderQoute);
 
+    //Listener en el boton nextQOute
+    nextButtonElement.addEventListener('click', async () => {
+        element.innerHTML = 'Loading...';
+        await fetchQuote().then(renderQoute);
+    });
+
 }
